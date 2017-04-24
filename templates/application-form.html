@@ -5,10 +5,10 @@
   
         <h1>Application Form</h1>
         <p class="instructions">Please complete this form and press submit below.</p>
-        <form action="/application-success", methods=["POST"]>
-            <p>First Name: <input type="text" name="firstname" </p>
-            <p>Last Name: <input type="text" name="lastname" class="lastname"></p>
-            <p>Salary Required: <input type="text" name="salary" </p>
+        <form action="/application-success", method="POST">
+            <p>First Name: <input type="text" name="first" </p>
+            <p>Last Name: <input type="text" name="last" class="lastname"></p>
+            <p>Salary Required: <input type="text" name="salary_required" </p>
             <p>Select job you are applying for:
                 <select name="job">
                 {% for job in jobs %}

@@ -14,23 +14,23 @@ app.secret_key = "ABC"
 @app.route("/")
 def show_homepage():
     """Show homepage"""
-    jobs = ["Software Engineer", "QA Engineer", "Product Manager"]
 
     return render_template("index.html")
 
 @app.route("/application-form")
 def application_form():
     """Show application form"""
+    jobs = ["Software Engineer", "QA Engineer", "Product Manager"]
 
-    return render_template("application-form.html")
+    return render_template("application-form.html", jobs=jobs)
 
 @app.route("/application-success", methods=["POST"])
 def submit_application():
     """Submits application and returns response"""
 
-    firstname = request.form.get("firstname")
-    lastname = request.form.get("lastname")
-    salary = request.form.get("salary")
+    firstname = request.form.get("first")
+    lastname = request.form.get("last")
+    salary = request.form.get("salary_required")
     job = request.form.get("job")
 
     salary = "${amount:,.2f}".format(amount=float(salary))
