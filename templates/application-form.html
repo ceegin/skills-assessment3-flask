@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+   {% block title %}Application Form{% endblock %}
+
+   {% block body %}
+  
+        <h1>Application Form</h1>
+        <p class="instructions">Please complete this form and press submit below.</p>
+        <form action="/application-success", methods=["POST"]>
+            <p>First Name: <input type="text" name="firstname" </p>
+            <p>Last Name: <input type="text" name="lastname" class="lastname"></p>
+            <p>Salary Required: <input type="text" name="salary" </p>
+            <p>Select job you are applying for:
+                <select name="job">
+                {% for job in jobs %}
+                    <option value="{{ job }}">{{ job }}</option>
+                {% endfor %}
+                </select></p>
+                <input type="submit">
+        </form>
+    {% endblock %}
